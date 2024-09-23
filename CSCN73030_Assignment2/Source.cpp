@@ -40,11 +40,13 @@ int main() {
     // Close the student data file
     file.close();
 
-    // Output the list of students to confirm they were read correctly
-    std::cout << "List of students:" << std::endl;
+#ifdef _DEBUG
+    // Debug mode: print all student information
+    std::cout << "DEBUG MODE: List of students:" << std::endl;
     for (const auto& student : students) {
         std::cout << "Name: " << student.firstName << " " << student.lastName << std::endl;
     }
+#endif
 
     return 0;
 }
